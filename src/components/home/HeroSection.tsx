@@ -25,7 +25,7 @@ export const HeroSection = () => {
           <div className="w-full md:w-1/2 flex flex-col justify-center space-y-4 text-center md:text-left">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-[#154313] leading-snug">
               <span className="bg-gradient-to-r from-[#154313] to-[#1e5c1b] bg-clip-text text-transparent">
-                We Don't Just Feed Stomachs, <br className="hidden sm:block" />We Feed Hearts
+                We Don't Just Feed <br />Stomachs, <br className="hidden sm:block" />We Feed Hearts
               </span>
             </h2>
 
