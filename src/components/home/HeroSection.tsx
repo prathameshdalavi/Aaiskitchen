@@ -15,7 +15,7 @@ export const HeroSection = () => {
           {/* Image Section */}
           <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300 ease-in-out">
             <img
-              src="/src/assets/home1st.jpg"
+              src="https://res.cloudinary.com/diqbtmjui/image/upload/v1749580800/home1st_brrgpm.jpg"
               alt="Home-cooked meals"
               className="object-cover w-full h-auto max-h-[300px] sm:max-h-[400px] md:max-h-[500px] rounded-xl"
             />

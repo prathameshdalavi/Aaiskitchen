@@ -30,7 +30,7 @@ export const OurStorySection = () => {
             <div className="relative group">
               <div className="absolute -right-2 md:-right-4 -bottom-2 md:-bottom-4 w-full h-full border-2 border-[#8bc34a] rounded-xl md:rounded-2xl z-0" />
               <img
-                src="/src/assets/story.png"
+                src="https://res.cloudinary.com/diqbtmjui/image/upload/v1749580838/story_pyscwr.png"
                 alt="Founders at VJTI hostel or Aai's Kitchen team"
                 className="relative z-10 w-full h-auto max-h-[250px] md:max-h-[400px] object-cover rounded-xl md:rounded-2xl shadow-xl md:shadow-2xl transform transition-all duration-500 group-hover:scale-105"
               />

@@ -17,7 +17,7 @@ export const WeSolveSection = () => {
           <div className="relative order-1 md:order-2">
             <div className="rounded-lg md:rounded-xl overflow-hidden h-48 md:h-64 lg:h-80">
               <img
-                src="/src/assets/wesolve.png"
+                src="https://res.cloudinary.com/diqbtmjui/image/upload/v1749580859/wesolve_a9xd4x.png"
                 alt="Happy students enjoying quality food"
                 className="w-full h-full object-cover"
               />

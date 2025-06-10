@@ -27,7 +27,7 @@ export const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <div className="flex items-center">
               <img
-                src="/src/assets/mainlogo.png"
+                src="https://res.cloudinary.com/diqbtmjui/image/upload/v1749580795/mainlogo_kbajkv.png"
                 alt="Aais Kitchen Logo"
                 className="w-auto h-55 sm:h-55 md:h-60 lg:h-70 mt-4 object-contain transition-transform duration-300 "
               />

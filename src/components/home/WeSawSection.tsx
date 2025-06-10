@@ -17,7 +17,7 @@ export const WeSawSection = () => {
           <div className="relative order-1 md:order-1">
             <div className="rounded-lg md:rounded-xl overflow-hidden h-48 md:h-64 lg:h-80">
               <img
-                src="/src/assets/problem-illustration.png"
+                src="https://res.cloudinary.com/diqbtmjui/image/upload/v1749580828/problem-illustration_eoj9aa.png"
                 alt="Unhappy students with cafeteria food"
                 className="w-full h-full object-cover"
               />

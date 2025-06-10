@@ -8,28 +8,28 @@ export const TeamSection = () => {
       text: "From head cooks who treat meals like sacred rituals...",
       description:
         "Our chefs bring generations of culinary wisdom to every dish, blending traditional techniques with modern creativity.",
-      img: "/src/assets/chiefsaaiskitchen.png",
+      img: "https://res.cloudinary.com/diqbtmjui/image/upload/v1749580840/chiefsaaiskitchen_pv7402.png",
     },
     {
       title: "Menu Crafters",
       text: "Our menu planners design meals with care and love.",
       description:
         "Each menu is carefully curated to balance nutrition, flavor, and seasonal availability for the perfect dining experience.",
-      img: "/src/assets/menuPlanner.png",
+      img: "https://res.cloudinary.com/diqbtmjui/image/upload/v1749580837/menuPlanner_pcubsw.png",
     },
     {
       title: "Quality Guardians",
       text: "Our quality control team ensures every bite is perfect.",
       description:
         "From farm to table, we maintain rigorous standards to guarantee freshness, safety, and exceptional taste in every meal.",
-      img: "/src/assets/qualitycontrol.png",
+      img: "https://res.cloudinary.com/diqbtmjui/image/upload/v1749580857/qualitycontrol_i7znlq.png",
     },
     {
       title: "Kitchen Caretakers",
       text: "And helpers who keep kitchens sparkling clean and warm.",
       description:
         "Our sanitation team works tirelessly to maintain impeccable hygiene standards, creating a welcoming environment for both staff and food preparation.",
-      img: "/src/assets/workersaaiskitchen.png",
+      img: "https://res.cloudinary.com/diqbtmjui/image/upload/v1749580855/workersaaiskitchen_gll77j.png",
     },
   ];
 

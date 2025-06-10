@@ -3,14 +3,14 @@ export const ContactUsSection = () => {
     {
       name: "Swanand Bhosale",
       role: "Co-Founder",
-      image: "/src/assets/swanand.png",
+      image: "https://res.cloudinary.com/diqbtmjui/image/upload/v1749580835/swanand_qwqzoj.png",
       email: "swanandbhosale25@gmail.com",
       contact: "+91 9209361798",
     },
     {
       name: "Shlok Khode",
       role: "Co-Founder",
-      image: "/src/assets/shlok.png",
+      image: "https://res.cloudinary.com/diqbtmjui/image/upload/v1749580857/shlok_wliuay.png",
       email: "shlokhode11@gmail.com",
       contact: "+91 9767769226",
     },

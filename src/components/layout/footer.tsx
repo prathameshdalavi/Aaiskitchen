@@ -11,7 +11,7 @@ export const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex flex-col items-start">
               <img
-                src="/src/assets/whitelogo.png"
+                src="https://res.cloudinary.com/diqbtmjui/image/upload/v1749580839/whitelogo_wq2hti.png"
                 alt="Aais Kitchen Logo"
                 className="h-16 w-auto object-contain transition-transform duration-300 hover:scale-105 mb-4"
               />
@@ -89,7 +89,7 @@ export const Footer = () => {
           <div className="lg:col-span-1 flex justify-center lg:justify-end items-start">
             <div className="text-center lg:text-right">
               <img 
-                src="/src/assets/aaiskitchenlogo.png" 
+                src="https://res.cloudinary.com/diqbtmjui/image/upload/v1749580793/AAI_S_KITCHEN_FINAL_LOGO_Neatfitted-removebg-preview_uqw4xo.png" 
                 alt="Secondary Aai's Kitchen Logo" 
                 className="h-55 w-auto object-contain transition-transform duration-300 hover:scale-105 mx-auto lg:mx-0"
               />
