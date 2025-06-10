@@ -2,7 +2,7 @@ export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative w-full bg-[#f8f9f0] px-4 sm:px-6 md:px-12 overflow-hidden min-h-screen flex items-center"
+      className="relative w-full bg-[#f8f9f0] px-4 mt-6    sm:px-6 md:px-12 overflow-hidden min-h-screen flex items-center"
     >
       {/* Decorative Blobs */}
       <div className="absolute top-[-3rem] right-[-3rem] w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 bg-[#cdeac0] rounded-full opacity-30 blur-3xl z-0" />
@@ -23,7 +23,7 @@ export const HeroSection = () => {
 
           {/* Text Section */}
           <div className="w-full md:w-1/2 flex flex-col justify-center space-y-4 text-center md:text-left">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-[#154313] leading-snug">
+            <h2 className="text-xl sm:text-2xl md:text-3xl  lg:text-5xl font-bold text-[#154313] leading-snug">
               <span className="bg-gradient-to-r from-[#154313] to-[#1e5c1b] bg-clip-text text-transparent">
                 We Don't Just Feed <br />Stomachs, <br className="hidden sm:block" />We Feed Hearts
               </span>
