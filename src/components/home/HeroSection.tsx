@@ -1,7 +1,7 @@
 export const HeroSection = () => {
   return (
     <section
-      id="home"
+      
       className="relative w-full bg-[#f8f9f0] px-4 mt-6    sm:px-6 md:px-12 overflow-hidden min-h-screen flex items-center"
     >
       {/* Decorative Blobs */}

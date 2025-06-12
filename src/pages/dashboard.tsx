@@ -6,12 +6,14 @@ import { WeSawSection } from "../components/home/WeSawSection";
 import { WeSolveSection } from "../components/home/WeSolveSection";
 import { TeamSection } from "../components/home/TeamSection";
 import { ContactUsSection } from "../components/home/contactus";
+import { HomeSection } from "../components/home/homeSection";
 
 export const Dashboard = () => {
   return (
     <div className="min-h-screen flex flex-col bg-[#f8f9f0]">
       <Navbar />
       <div className="flex-grow">
+        <HomeSection  />
         <HeroSection />
         <OurStorySection />
         <WeSawSection />
