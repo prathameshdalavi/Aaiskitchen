@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import ts from 'typescript';
 
 export const HomeSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -49,7 +50,7 @@ export const HomeSection = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
     setTimeout(() => setIsAnimating(false), 800);
   };
-
+//@ts-ignore
   const goToSlide = (index) => {
     if (isAnimating || index === currentSlide) return;
     setIsAnimating(true);
