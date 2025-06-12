@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import ts from 'typescript';
+
 
 export const HomeSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
