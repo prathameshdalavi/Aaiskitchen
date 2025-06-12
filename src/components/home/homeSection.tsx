@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
 
 export const HomeSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -25,45 +24,65 @@ export const HomeSection = () => {
       headline: "Not Just Another Mess",
       subheadline: "We Are Mission.",
       subtext:
-        "Aai’s Kitchen isn’t just a mess contractor — we’re a student-first startup changing hostel food forever.",
+        "Aai's Kitchen isn't just a mess contractor — we're a student-first startup changing hostel food forever.",
       imageUrl: "https://res.cloudinary.com/diqbtmjui/image/upload/v1749711173/messarea_oethpl.jpg",
     },
     {
       headline: "India's Most",
       subheadline: "Trusted Mess Chain.",
       subtext:
-        "We’re not just serving food — we’re building India’s most loved and trusted mess food brand.",
+        "We're not just serving food — we're building India's most loved and trusted mess food brand.",
       imageUrl: "https://res.cloudinary.com/diqbtmjui/image/upload/v1749711198/trust_uqox2e.png",
     },
   ];
 
-  const nextSlide = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-    setTimeout(() => setIsAnimating(false), 800);
-  };
+  // Function to reset and restart the interval
+  const resetInterval = useCallback(() => {
+    // This will be used to store the interval ID
+    return setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+  }, [slides.length]);
 
-  const prevSlide = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
+  // Auto-slide effect with interval management
+  useEffect(() => {
+    const interval = resetInterval();
+    return () => clearInterval(interval);
+  }, [resetInterval]);
+
+  // Function to handle manual navigation and reset timer
+  const handleManualNavigation = useCallback((navigationFn) => {
+    return () => {
+      if (isAnimating) return;
+      
+      setIsAnimating(true);
+      navigationFn();
+      setTimeout(() => setIsAnimating(false), 800);
+      
+      // Reset the auto-slide timer by clearing and recreating the interval
+      // We'll trigger a re-render of the useEffect above
+      setCurrentSlide(prev => prev); // This forces a state update without changing the value
+    };
+  }, [isAnimating]);
+
+  const nextSlide = handleManualNavigation(() => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  });
+
+  const prevSlide = handleManualNavigation(() => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-    setTimeout(() => setIsAnimating(false), 800);
-  };
-//@ts-ignore
-  const goToSlide = (index) => {
+  });
+
+  const goToSlide = useCallback((index) => {
     if (isAnimating || index === currentSlide) return;
+    
     setIsAnimating(true);
     setCurrentSlide(index);
     setTimeout(() => setIsAnimating(false), 800);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 6000);
-    return () => clearInterval(interval);
-  }, []);
+    
+    // Reset the auto-slide timer
+    setCurrentSlide(prev => prev); // Force useEffect to re-run
+  }, [isAnimating, currentSlide]);
 
   return (
     <div id="home" className="relative overflow-hidden bg-gradient-to-br from-[#e0f2e9] via-[#f0f7ed] to-[#e9f7ef]">
@@ -155,24 +174,24 @@ export const HomeSection = () => {
             {/* Arrows */}
             <button
               onClick={prevSlide}
-              className="absolute left-2 sm:left-4 lg:left-8 top-1/2 transform -translate-y-1/2 z-30 p-2 sm:p-3 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white transition-all duration-300 hover:scale-110 shadow-xl"
+              className="absolute left-2 sm:left-4 lg:left-8 top-1/2 transform -translate-y-1/2 z-30 p-2 sm:p-3 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white transition-all duration-300 hover:scale-110 shadow-xl cursor-pointer"
             >
               <ChevronLeft size={20} className="text-gray-800 sm:w-6 sm:h-6" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-2 sm:right-4 lg:right-8 top-1/2 transform -translate-y-1/2 z-30 p-2 sm:p-3 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white transition-all duration-300 hover:scale-110 shadow-xl"
+              className="absolute right-2 sm:right-4 lg:right-8 top-1/2 transform -translate-y-1/2 z-30 p-2 sm:p-3 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white transition-all duration-300 hover:scale-110 shadow-xl cursor-pointer"
             >
               <ChevronRight size={20} className="text-gray-800 sm:w-6 sm:h-6" />
             </button>
 
             {/* Slide Indicators */}
-            <div className="absolute bottom-0 sm:bottom-20 lg:bottom-16 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2 sm:space-x-3 lg:space-x-4">
+            <div className="absolute -bottom-20 sm:-bottom-8 lg:-bottom-6 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2 sm:space-x-3 lg:space-x-4 pb-8">
               {slides.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`transition-all duration-300 ${
+                  className={`transition-all duration-300 cursor-pointer ${
                     index === currentSlide
                       ? 'w-6 sm:w-8 h-2.5 bg-green-600 rounded-full shadow-lg'
                       : 'w-2.5 h-2.5 bg-white/70 rounded-full hover:bg-white hover:scale-110'
