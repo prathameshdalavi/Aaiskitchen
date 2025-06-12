@@ -51,7 +51,7 @@ export const HomeSection = () => {
   }, [resetInterval]);
 
   // Function to handle manual navigation and reset timer
-  const handleManualNavigation = useCallback((navigationFn: () => void) => {
+  const handleManualNavigation = useCallback((navigationFn) => {
     return () => {
       if (isAnimating) return;
       
@@ -72,7 +72,7 @@ export const HomeSection = () => {
   const prevSlide = handleManualNavigation(() => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   });
-//@ts-ignore
+
   const goToSlide = useCallback((index) => {
     if (isAnimating || index === currentSlide) return;
     
@@ -87,7 +87,7 @@ export const HomeSection = () => {
   return (
     <div id="home" className="relative overflow-hidden bg-gradient-to-br from-[#e0f2e9] via-[#f0f7ed] to-[#e9f7ef]">
       <div className="relative z-10 mt-38 md:mt-16">
-        <div className="w-full pb-8 ">
+        <div className="w-full pb-32 sm:pb-24 lg:pb-20 ">
           {/* Set fixed height to center arrows */}
           <div className="relative h-[480px] sm:h-[520px] md:h-[580px] lg:h-[600px] xl:h-[640px]">
             {slides.map((slide, index) => (
@@ -186,7 +186,7 @@ export const HomeSection = () => {
             </button>
 
             {/* Slide Indicators */}
-            <div className="absolute -bottom-20 sm:-bottom-8 lg:-bottom-6 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2 sm:space-x-3 lg:space-x-4 pb-8">
+            <div className="absolute -bottom-28 sm:-bottom-20 lg:-bottom-14 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2 sm:space-x-3 lg:space-x-4 pb-16">
               {slides.map((_, index) => (
                 <button
                   key={index}
